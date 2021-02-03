@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+}
+
+.pageContainer {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /* align-items: center; */
+}
+
+.topic-adder-container {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-content: center;
+  margin: auto;
+}
+@media screen and (max-width: 900px) {
+  .pageContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.topic-title-container {
+  align-self: center;
+  display: block;
+  width: 250px;
+  text-align: center;
+  /* flex: 250px 250px 300px; */
+}
+.new-question {
+  border: 1px solid #ff960d;
+  /* width: 300px; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  flex: 0 0 300px;
+}
+
+.new-question textarea {
+  width: 80%;
+  font-size: 1.2em;
+  display: block;
+}
+
+/* .new-question button {
+  border: 1px solid black;
+  width: 40%;
+} */
+
+.new-question > div {
+  /* style all div children in new question class*/
+  margin: 10px 10px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.flash-card {
+  margin-top: 20px;
+  border: 1px solid rgb(134, 134, 134);
+  width: 300px;
+
+  padding: 10px;
+}
+
+.flash-card a {
+  text-decoration: none;
+}
+.flash-card p {
+  margin: 5px 0;
+}
