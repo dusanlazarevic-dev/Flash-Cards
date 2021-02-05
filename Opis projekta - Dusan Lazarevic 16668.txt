@@ -1,11 +1,13 @@
 Aplikacija je namenjena preslisavanju tokom ucenja, tehnikom "flashing cards". Imamo kartice koje imaju kratka pitanja i sakriven odgovor, koji mozemo da otkrijemo klikom.
 
-Nakon otvaranja aplikacije, iz baze se ucitavajupodaci o temama i karticama iz baze ukoliko postoje. Dodavanje nove teme se vrsi najgornjom formom "Add new topic" upisom u polje i klikom na dugme Create
+Nakon otvaranja aplikacije, iz baze se ucitavaju podaci o temama i karticama iz baze ukoliko postoje. Dodavanje nove teme se vrsi najgornjom formom "Add new topic" upisom u polje i klikom na dugme Create
 
-Nakon toga pojavljuje se nova tema, klikom ispod njenog naziva ju je moguce obrisati. Desno od naziva teme nalazi se forma za dodavanje nove kartice. Nakon sto unesemo pitanje i odgovor, klikom na save kartica je dodata.
+Nakon toga pojavljuje se nova tema, klikom ispod njenog naziva ju je moguce obrisati. Desno od naziva teme nalazi se forma za dodavanje ili menjanje nove kartice. 
 
-Klikom na "Show/Hide Answer" mozemo otkriti odnosno sakriti odgovor na dato pitanje.
+Ukoliko je upisano pitanje koje vec postoji, menjanjem odgovora i kliknom na SAVE dugme ono ce biti promenjeno. 
+Na svakoj kartici klikom na dugme "EDIT", forma za menjanje/dodavanje kartica automatski selektuje pitanje i odgovor kartice na kojoj vrsimo promene, a meni za autore je sakriven jer autora nije moguce menjati.
 
-Na svakoj kartici je moguce vrsiti izmene klikom na dugme "EDIT" koje je selektuje, i nakon promene odgovora u formi pored imena teme, klikom na SAVE dugme sacuvacemo promene.
+Klikom na NEW moguce je dodati novu karticu, pojavljuje se meni za odabir autora i nakon popunjavanja tekstualnih polja, klikom na SAVE nova kartica je dodata.
 
-Ogranicenja su da tekstualna polja ne smeju biti prazna, kao i da postoji odredjeni maksimum broja unetih karaktera za svako polje, koj je ispisan unutar praznog polja. 
+Kod kartica, klikom na "Show/Hide Answer" mozemo otkriti odnosno sakriti odgovor na dato pitanje.
+
