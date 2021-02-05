@@ -1,9 +1,9 @@
 export class FlashCard{
-    constructor(question, answer){
+    constructor(question, answer, author){
         this.question = question;
         this.answer = answer;
         this.cardContainer = null;
-        
+        this.author = author;
     }
 
    
@@ -16,11 +16,17 @@ export class FlashCard{
         cardElement.dataset.answerVisibility = false;
         host.appendChild(cardElement);
 
-        this.cardContainer = cardElement
+        this.cardContainer = cardElement;
+        cardElement.dataset.selectedQuestion = false;
+
+        
+
 
         const cardQuestion = document.createElement("p");
         cardQuestion.innerHTML = this.question;
         cardQuestion.className = "card-question";
+      
+        
         cardElement.appendChild(cardQuestion);
                
         const revealLink = document.createElement("a");
@@ -41,6 +47,7 @@ export class FlashCard{
         deleteButton.innerHTML = "DELETE";
         deleteButton.onclick = (ev)=>{
             this.deleteCard();
+            
         }
         cardElement.appendChild(deleteButton);
 
@@ -48,9 +55,18 @@ export class FlashCard{
         editButton.innerHTML = "EDIT";
         editButton.onclick = (ev)=>{
             this.editCard();
+         
         }
         cardElement.appendChild(editButton);
 
+
+        const br = document.createElement("br");
+        cardElement.appendChild(br);
+        const authorName = document.createElement("label");
+        authorName.innerHTML = `Author: ${this.author}`;
+        authorName.style.fontWeight = "700";
+        authorName.style.fontSize = "0.7em"; 
+        cardElement.appendChild(authorName);
         
         
 
@@ -85,6 +101,7 @@ export class FlashCard{
             body: JSON.stringify({
                 "question": this.question,
                 "answer": this.answer
+                
             })
         });
         
@@ -113,7 +130,11 @@ export class FlashCard{
 
         const answerText = form.querySelector(".answer-text");
         answerText.value  = this.answer;
-        
+
+    
+      const dropDownList =  form.querySelector(".author-dropdown-list");
+         dropDownList.style.display = "none";
+     console.log(dropDownList);
     }
 
     updateCard(question, answer){

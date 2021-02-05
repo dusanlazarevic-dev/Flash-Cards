@@ -10,7 +10,7 @@ export class LearningTopic{
 
     }
 
-    drawTopic(host){
+    drawTopic(host, authorNamesList){
         
         this.topicContainer = document.createElement("div");
         host.appendChild(this.topicContainer );
@@ -47,7 +47,7 @@ export class LearningTopic{
         this.topicContainer.appendChild(topicTitleContainer);
 
        
-        this.form.drawForm(this.topicContainer);
+        this.form.drawForm(this.topicContainer, authorNamesList);
         this.form.topic = this;
         this.drawCards(this.topicContainer);
        
@@ -76,10 +76,11 @@ export class LearningTopic{
 
     addCard(newCard){
         this.flashCardArray.push(newCard);
+
     }
 
-    addCardFromScratch(question, answer){
-        const newCard = new FlashCard(question, answer);
+    addCardFromScratch(question, answer, author){
+        const newCard = new FlashCard(question, answer, author);
         this.flashCardArray.push(newCard);
 
         const indexOfLast = this.flashCardArray.length - 1;

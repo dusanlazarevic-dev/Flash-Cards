@@ -25,7 +25,7 @@ namespace backend.Controllers
 
         public async Task<List<LearningTopic>> GetTopics()
         {
-            return await Context.Topics.Include(p => p.Cards).ToListAsync();
+            return await Context.Topics.Include(p => p.Cards).ThenInclude(card => card.Author).ToListAsync();
         }
 
         [Route("WriteTopic")]
@@ -107,6 +107,9 @@ namespace backend.Controllers
 
                 var topic = Context.Topics.First(t => t.TopicName == topicName);
                 card.Topic = topic;
+
+                card.Author = Context.Authors.First(a => a.Name == card.Author.Name);
+
                 Context.FlashCards.Add(card);
                 await Context.SaveChangesAsync();
                 return Ok();
@@ -151,6 +154,14 @@ namespace backend.Controllers
                 await Context.SaveChangesAsync();
                 return Ok();
             }
+        }
+
+
+        [Route("GetAuthors")]
+        [HttpGet]
+        public async Task<List<Author>> GetAuthors()
+        {
+            return await Context.Authors.ToListAsync();
         }
     }
 }

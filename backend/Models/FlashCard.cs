@@ -23,5 +23,11 @@ namespace backend.Models
 
         [JsonIgnore]
         public LearningTopic Topic { get; set; }
+
+
+
+        [Column]
+
+        public Author Author { get; set; }
     }
 }
